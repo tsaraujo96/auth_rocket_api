@@ -1,0 +1,37 @@
+name: "db-ml-api"
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: postgres.dockerfile
+    image: "postgres-db"
+    container_name: "db-container"
+    environment:
+      POSTGRES_DB: "db"
+      POSTGRES_USER: "admindb"
+      POSTGRES_PASSWORD: "admindb"
+      PGDATA: "dbvol"
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - dbvol:/data/postgres-db
+
+  mongodb:
+    build:
+      context: .
+      dockerfile: mongo.dockerfile
+    image: "mongo-db"
+    container_name: "mongo-container"
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "admindb"
+      MONGO_INITDB_ROOT_PASSWORD: "admindb"
+    ports:
+      - 27017:27017
+    volumes:
+      - dbvol:/data/mongo-db
+
+volumes:
+  dbvol:
+    external: true

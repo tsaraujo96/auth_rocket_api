@@ -1,0 +1,1 @@
+pub const JWT_SECRET: &'static str = "339e9deb-d971-4d61-9d1f-fdfdc1216dae";

@@ -29,13 +29,13 @@ Now you can run your application using, remember to go back to the project initi
 
 #### Returns all registered users - *need authentication*
 
-```http
+```curl
   GET /get_users
 ```
 
 #### Create an user  - *dont need authentication*
 
-```http
+```curl
   POST /create_user
 ```
 
@@ -49,7 +49,7 @@ Now you can run your application using, remember to go back to the project initi
 
 #### Login 
 
-```http
+```curl
   POST /login
 ```
 

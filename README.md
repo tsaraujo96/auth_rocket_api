@@ -19,6 +19,12 @@ After intall nightly version, you need up postgresql database on docker, browser
   docker-compose up -d
 ```
 
+Run all migrations with Diesel, go to the infrastructure folder and run this command:
+
+```bash
+  diesel migration run
+```
+
 Now you can run your application using, remember to go back to the project initial folder. This command will compile your application and run it.
 
 ```bash
